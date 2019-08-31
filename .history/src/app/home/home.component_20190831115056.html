@@ -1,0 +1,91 @@
+ <!-- Compiled and minified CSS -->
+
+ <style>
+    
+    .file-upload input[type='file'] {
+  display: none;
+}
+.custom-file-label.rounded-pill {
+  border-radius: 50rem;
+}
+
+.custom-file-label.rounded-pill::after {
+  border-radius: 0 50rem 50rem 0;
+}
+
+
+
+
+</style>
+<div class="row">
+    <div class="container">
+<h4 style= "font-family:sans-serif; font-style: italic; text-align: center; color: rgb(43, 18, 18);"><b>Select your files to add a job</b></h4>
+<hr >
+</div>
+
+<div class="col-md-6 offset-md-3">
+<!-- <p>Your role is: <strong>{{currentUser.role}}</strong>.</p> -->
+<br>
+<div class="container-fluid">
+    <div class="roe">
+        <div class="col-md-12">
+            <div class="custom-file overflow-hidden rounded-pill mb-5">
+                <input id="customFile" type="file" class="custom-file-input rounded-pill"  accept=".xlsx" (change)="fileUpload($event)" multiple class= "form control">
+                <label for="customFile" class="custom-file-label rounded-pill" >Choose file</label>
+              </div>
+            
+        <div class="form-group">
+          <div class="row"></div>
+            <!-- <button type="button" class="btn btn-success" (click)="save()">Submit</button>  &nbsp;&nbsp;   -->
+            <!-- <input type="file" class="btn btn-success"  id="file"  accept=".xlsx" (change)="fileUpload($event)" multiple class= "form control" aria-label="File browser example" >
+            <label for="file" class="btn-1">upload file</label> -->
+        </div>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label style="color:black; font-size: 150%;">Your Name:</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name">
+    
+  </div>
+  <h6><b>Upload Files</b></h6>
+
+
+<table class="table table-striped"  id='example-table'>
+    <thead class="thead-dark">
+        
+        <th scope="col">File Name</th>
+        <th scope="col">Size</th>
+        <th scope="col">Choose Template</th>
+        <th scope="col">Action</th>
+
+        
+    </thead>
+     <tbody>
+         <tr class="table-dark" *ngFor = "let excel of images">
+            <td  class="table-dark" hidden ="hidden">{{excel.stat}}</td>
+             <td  class="table-dark" style="color:black;">{{excel.name}}</td>
+             <td   class="table-dark" style="color:black;">{{excel.size}}</td>
+             <td  class="table-dark" hidden ="hidden">{{currentUser.role}}</td>
+             <td  class="table-dark" style="color:black;"><select class="custom-select" id="gender2">
+              <option #options selected>--Select--</option>
+              <option value="1">Template-02</option>
+              <option value="2">Template-03</option>
+              <option value="3">Template-04</option>
+              <td  class="table-dark" hidden="hidden">{{excel.name}}</td>
+            
+            </select> </td>
+            
+             <td  class="table-dark"><button class="btn btn-primary" (click)="popUp()" href="javascript:void(0)" (click)="deleteRow(excel)">Delete</button></td>
+              
+            </tr>
+     </tbody>
+  </table>
+  <button type="button" class="btn btn-success" id="convert-table" (click)="save()">Submit</button> 
+
+  </div>
+  </div>
+
+
+
+            
